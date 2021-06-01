@@ -45,7 +45,7 @@ def edit_task(request, task_id):
         return redirect('todolist')
     else: 
         task_obj = Tasklist.objects.get(pk=task_id)
-        return render(request, 'edit.html', {})
+        return render(request, 'edit.html', {'task_obj':task_obj})
 @login_required
 def complete_task(request,task_id):
     task = Tasklist.objects.get(pk=task_id)
