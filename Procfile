@@ -1,1 +1,1 @@
-web : gunicorn tm-mate.wsgi--log-file-
+web : gunicorn tm-mate.wsgi --log-file -
