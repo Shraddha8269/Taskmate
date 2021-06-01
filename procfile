@@ -1,1 +1,1 @@
-web: guincorn tm-mate.wsgi
+web: gunicorn tm-mate.wsgi
