@@ -71,7 +71,7 @@ def index(request):
     context={
         "welcometext":"Welcome To Index!!",
     }
-    return render(request,"Index.html",context)
+    return render(request,"index.html",context)
 
 def contacts(request):
     if(request.method == 'POST'):
