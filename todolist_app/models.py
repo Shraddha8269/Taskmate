@@ -9,6 +9,14 @@ class Tasklist(models.Model):
     def __str__(self):
         return self.task+" - "+str(self.done)
 
+class Contact(models.Model):
+    first_name = models.CharField(max_length = 50)
+    last_name = models.CharField(max_length = 50)
+    email_address = models.EmailField(max_length = 150)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.email_address
 
 
 

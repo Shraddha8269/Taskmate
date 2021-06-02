@@ -77,20 +77,8 @@ def contacts(request):
     if(request.method == 'POST'):
         form = ContactForm(request.POST or None)
         if(form.is_valid()):
-            subject = "Website Inquiry" 
-            body = {
-			'first_name': form.cleaned_data['first_name'], 
-			'last_name': form.cleaned_data['last_name'], 
-			'email': form.cleaned_data['email_address'], 
-			'message':form.cleaned_data['message'], 
-			}
-            message = "\n".join(body.values())
-            try:
-                send_mail(subject, message, 'email_address', ['shraddhajain3131@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            
-            
+            form.save()
+            messages.success(request,("Thank You For The Inquiry!"))
             return redirect ("contact_us")
     all_form=ContactForm()
     return render(request, "contacts.html", {'all_form':all_form})

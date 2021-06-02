@@ -120,6 +120,6 @@ LOGIN_REDIRECT_URL = "todolist"
 
 LOGIN_URL = "login"
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 django_heroku.settings(locals())
